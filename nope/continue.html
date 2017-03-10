@@ -6,9 +6,7 @@
   <script src="js/time.js"></script>
 </head>
 <body>
-  <div id="background">
-  <img src="bg.jpg" class = "stretch" alt=""/>
-  </div>
+
   <center>
   <br><br><br><br>
   <yowaddup>
@@ -25,29 +23,69 @@
       day = date.getDay();
       days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
       h = date.getHours();
-      if(h<10)
-      {
-        h = "0"+h;
-      }
+
       m = date.getMinutes();
-      if(m<10)
-      {
-        m = "0"+m;
-      }
+
       s = date.getSeconds();
-      if(s<10)
-      {
-        s = "0"+s;
-      }
+
         result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
         document.getElementById(id).innerHTML = result;
         setTimeout('date_time("'+id+'");','1000');
+
         return true;
 }
   </script>
   <script type="text/javascript">
   window.onload = date_time('date_time');
   </script>
+<script type="text/javascript">
+function changebg()
+{
+  if(h<8&&m<15&&h>4)
+  {
+    document.body.style.background = "#f3f3f3 url('p1.jpg') no-repeat center top";
+  }
+  else if((h==8&&m>15)||(h==9&&m<5))
+{
+  document.body.style.background = "#f3f3f3 url('p2.jpg') no-repeat center top";
+}
+else if(h==9&&m>5)
+{
+  document.body.style.background = "#f3f3f3 url('p3.jpg') no-repeat center top";
+}
+else if(h==10&&m<50)
+{
+  document.body.style.background = "#f3f3f3 url('p4.jpg') no-repeat center top";
+}
+else if((h==10&&m>50)||(h==11&&m<40))
+{
+  document.body.style.background = "#f3f3f3 url('p5.jpg') no-repeat center top";
+}
+else if((h==11&&m>40)||(h==12&&m<20))
+{
+  document.body.style.background = "#f3f3f3 url('lunch.jpg') no-repeat center top";
+}
+else if((h==12&&m>20)||(h==1&&m<5))
+{
+  document.body.style.background = "#f3f3f3 url('p6.jpg') no-repeat center top";
+}
+else if(h==1&&m>5&&m<55)
+{
+  document.body.style.background = "#f3f3f3 url('p7.jpg') no-repeat center top";
+}
+else if((h==1&&m>55)||(h==2&&m<45))
+{
+  document.body.style.background = "#f3f3f3 url('p8.jpg') no-repeat center top";
+}
+else
+{
+  document.body.style.background = "#f3f3f3 url('gg.jpg') no-repeat center top";
+}
+
+}
+changebg();
+</script>
+
   </center>
   </yowaddup>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
